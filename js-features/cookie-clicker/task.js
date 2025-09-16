@@ -5,7 +5,7 @@ let clickCount = 0;
 let large = false;
 
 
-element.clicker = function() {
+element.onclick = function() {
     clickCount++;
     counter.textContent = clickCount;
 
