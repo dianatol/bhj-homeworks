@@ -4,9 +4,8 @@ const countdown = () => {
     if (secondsRemaining > 0) {
         secondsRemaining --;
         timerElement.textContent = secondsRemaining;
-    } else {
-        alert("Вы победили в конкурсе")
     }
 };
 
-setInterval(countdown, 1000);
+let timerID = setInterval(countdown, 1000);
+setTimeout(() => { clearInterval(timerID); alert ('Вы победили в конкурсе')}, 60000);
