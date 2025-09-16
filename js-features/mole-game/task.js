@@ -1,5 +1,5 @@
 (() => {
-  let playing = true,
+    let playing = true,
     activeHole = 1,
     deadCount = 0,
     lostCount = 0;
@@ -23,9 +23,21 @@
       if (deadCount >= 10) {
         stop();
         alert('Победа! Вы убили 10 кротов!');
+        deadCount = 0;
+        lostCount = 0;
+        document.getElementById('dead').textContent = deadCount;
+        document.getElementById('lost').textContent = lostCount;
+        playing = true;
+        next();
       } else if (lostCount >= 5) {
         stop();
         alert('Поражение! Слишком много промахов.');
+        deadCount = 0;
+        lostCount = 0;
+        document.getElementById('dead').textContent = deadCount;
+        document.getElementById('lost').textContent = lostCount;
+        playing = true;
+        next();
       }
     },
     handleHoleClick = (event) => {
